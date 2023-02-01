@@ -3,6 +3,7 @@ package n1singleton;
 public class App {
 
 	public static void main(String[] args) {
+		//Instanciem l'atribut ArrayList d'Strings a través del mètode estàtic de la classe Undo getInstance
 		Undo.getInstance();
 		
 		boolean exit=false;
@@ -15,15 +16,15 @@ public class App {
 	      int selectedOption = Input.scanningForInt("Please select an option number from the menu:");
 	      switch(selectedOption)
 	      {
-	       case 1: //
+	       case 1: //Amb el mètode estàtic takeCommand d'Undo demanem el command per guardar com a String al commandsList
 	    	   Undo.takeCommand(Input.scanningForString("Please insert command"));
 	    	   break;
 	    	   
-	       case 2: //
+	       case 2: //Amb undoCommand esborreml'últim command afegit
 	    	   Undo.undoCommand();
 	    	   break;
 	    	   
-	       case 3: //
+	       case 3: //Amb showCommands imprimim forEach element de l'ArrayList de commands
 	    	   Undo.showCommands();
 	    	   break;
 
