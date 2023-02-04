@@ -1,5 +1,5 @@
 package n3command;
-//ModifyStock
+
 public class VBraker implements IOrder{
 	private Vehicle vehicle;
 	

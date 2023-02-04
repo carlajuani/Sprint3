@@ -1,5 +1,5 @@
 package n3command;
-//specific stock
+
 public class Ship extends Vehicle{
 	
 	public Ship(String model, String color, String factoryYear) {

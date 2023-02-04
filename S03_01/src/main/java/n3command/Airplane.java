@@ -1,5 +1,5 @@
 package n3command;
-//specific stock
+
 public class Airplane extends Vehicle{
 
 	public Airplane(String model, String color, String factoryYear) {

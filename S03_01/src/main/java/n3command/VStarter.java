@@ -1,5 +1,5 @@
 package n3command;
-//BuyStock
+
 public class VStarter implements IOrder{
 	
 	private Vehicle vehicle;

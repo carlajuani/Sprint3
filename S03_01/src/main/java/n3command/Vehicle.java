@@ -1,5 +1,5 @@
 package n3command;
-//Stock or parent of stocks
+
 public abstract class Vehicle{
 	protected String model;
 	protected String color;

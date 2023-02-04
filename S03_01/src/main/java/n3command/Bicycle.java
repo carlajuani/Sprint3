@@ -1,5 +1,5 @@
 package n3command;
-//specific stock
+
 public class Bicycle extends Vehicle{
 	
 	public Bicycle(String model, String color, String factoryYear) {
