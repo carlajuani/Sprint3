@@ -5,7 +5,7 @@ package S3_2_n2Callback;
     La classe que invoca la passarel·la de pagament serà una botiga de sabates.
  */
 
-public class App {
+public class ShoeShop {
 	//cal guardar en variable? millor pràctica? SOS
 	public static void main(String[] args) throws InterruptedException {
 		new PaymentGateway(new PayPal(35.25));
