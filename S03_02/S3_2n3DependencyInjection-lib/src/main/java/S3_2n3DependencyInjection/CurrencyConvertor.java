@@ -1,30 +1,33 @@
 package S3_2n3DependencyInjection;
 
 public class CurrencyConvertor {
-	public static double convertEuros(double amount, String currency) {
-		if (currency.equalsIgnoreCase("pounds")) {
-			amount *= 1.4;
-		} else if (currency.equalsIgnoreCase("dollars")) {
-			amount *= 1.1;
+	public static void convertToEuros(Article a) {
+		String conversion = a.getPrice() +a.getInitialCurrency();
+		if (a.getInitialCurrency().equalsIgnoreCase("£")) {
+			conversion =  Math.round((a.getPrice() * 1.4)*1000)/1000d +"€";
+		} else if (a.getInitialCurrency().equalsIgnoreCase("$")) {
+			conversion = Math.round((a.getPrice() * 1.1)*1000)/1000d +"€";
 		}
-		return Math.round(amount*1000)/1000;
+		System.out.println(a +" ->"+ conversion);	
 	}
 	
-	public static double convertDollars(double amount, String currency) {
-		if (currency.equalsIgnoreCase("euros")) {
-			amount *= 0.90;
-		} else if (currency.equalsIgnoreCase("pounds")) {
-			amount *= 1.25;
+	public static void convertToDollars(Article a) {
+		String conversion = a.getPrice() +a.getInitialCurrency();
+		if (a.getInitialCurrency().equalsIgnoreCase("€")) {
+			conversion =  Math.round((a.getPrice() * 0.90))*1000/1000d +"$";
+		} else if (a.getInitialCurrency().equalsIgnoreCase("£")) {
+			conversion =  Math.round((a.getPrice() * 1.25))*1000/1000d +"$";
 		}
-		return Math.round(amount*1000)/1000;
+		System.out.println(a +" ->"+ conversion);
 	}
 	
-	public static double convertPounds(double amount, String currency) {
-		if (currency.equalsIgnoreCase("euros")) {
-			amount *= 0.70;
-		} else if (currency.equalsIgnoreCase("dollars")) {
-			amount *= 0.80;
+	public static void convertToPounds(Article a) {
+		String conversion = a.getPrice() +a.getInitialCurrency();
+		if (a.getInitialCurrency().equalsIgnoreCase("€")) {
+			conversion =  Math.round((a.getPrice() * 0.70))*1000/1000d +"£";
+		} else if (a.getInitialCurrency().equalsIgnoreCase("$")) {
+			conversion =  Math.round((a.getPrice() * 0.80))*1000/1000d +"£";
 		}
-		return Math.round(amount*1000)/1000;
+		System.out.println(a +" ->"+ conversion);
 	}
 }
