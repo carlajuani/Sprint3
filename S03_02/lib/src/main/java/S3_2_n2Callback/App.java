@@ -6,9 +6,9 @@ package S3_2_n2Callback;
  */
 
 public class App {
-
+	//cal guardar en variable? millor pràctica?
 	public static void main(String[] args) throws InterruptedException {
-		PaymentGateway payment = new PaymentGateway(new PayPal(35.25));
+		new PaymentGateway(new PayPal(35.25));
 		PaymentGateway payment2 = new PaymentGateway(new CreditCard(35.25));
 		PaymentGateway payment3 = new PaymentGateway(new DirectDebit(35.25));
 	}
