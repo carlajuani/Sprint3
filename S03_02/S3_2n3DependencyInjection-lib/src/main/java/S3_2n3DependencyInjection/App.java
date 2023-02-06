@@ -7,7 +7,7 @@ package S3_2n3DependencyInjection;
 public class App {
 
 	public static void main(String[] args) {
-		//emprem els metodes estatics del convertidor de moneda per fer la correccio del preu de l'article en funcio del canvi de divisa
+		//emprem els metodes estatics del currencyConvertor per fer la correccio del preu de l'article en funcio del canvi de divisa
 		CurrencyConvertor.convertToEuros(new Article("shoes", 56.15, "£"));
 		CurrencyConvertor.convertToPounds(new Article("lollipop", 1.95, "€"));
 		CurrencyConvertor.convertToEuros(new Article("bicycle", 325.00, "$"));
