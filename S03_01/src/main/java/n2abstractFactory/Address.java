@@ -1,6 +1,6 @@
 package n2abstractFactory;
 
-public abstract class Address implements FormattedAddress{
+public class Address extends AddressFactory{
 
 	protected String street;
 	protected String streetNumber;
@@ -9,7 +9,6 @@ public abstract class Address implements FormattedAddress{
 	protected String postcode;
 	protected String city;
 	
-	public Address() {}
 	public Address (String street, String streetNumber, String floor, String door, String postcode, String city) {
 		this.street = street;
 		this.streetNumber = streetNumber;
@@ -19,7 +18,6 @@ public abstract class Address implements FormattedAddress{
 		this.city = city;
 	}
 	
-	@Override
 	public String format() {
 		return "[St "+ street +" n"+ streetNumber +", "+ floor +" "+ door +", "+ postcode +", "+ city;
 	}

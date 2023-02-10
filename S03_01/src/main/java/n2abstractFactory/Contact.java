@@ -1,10 +1,10 @@
 package n2abstractFactory;
 
 public class Contact{
-	FormattedAddress address;
-	FormattedPhone phone;
+	Address address;
+	Phone phone;
 	
-	public Contact(FormattedAddress address, FormattedPhone phone) {
+	public Contact(Address address, Phone phone) {
 		this.address = address;
 		this.phone = phone;
 	}

@@ -53,7 +53,7 @@ public class App {
 	
 	//1. afegim objecte a contactList
 	private static Map<String, Contact> addContactInfo(Map<String, Contact> contactList) {
-		//creem un nou productor factoryProducer que implementa la interface abstractFactory amb 2 metodes que retornen address i phone
+		//creem un nou productor de fabriques factoryProducer
 		FactoryProducer factoryProducer = new FactoryProducer();
 		//demanem les dades del contact amb scanner classe Input
 		String nameComplete = Input.scanningForString("Please insert your full name");
@@ -65,15 +65,17 @@ public class App {
 		String postcode = Input.scanningForString("Please insert postcode"); 
 		String city = Input.scanningForString("Please insert city");
 		String phoneNumber = Input.scanningForString("Please insert phone number");
-		/*emprem el metode getAdress del factoryproducer que retorna la instancia duna classe filla de la 
-		classe abstracta Address(DanishAddres, SpanishAddres o UKAddress segons el valor del String country), 
-		que implementa la interface FormattedAddress*/
-		FormattedAddress address = factoryProducer.getAddress(country, street, streetNumber, floor, door, postcode, city);
-		//fem el mateix amb el metode getPhone que retorna una filla de Phone(DanishPhone, UKPhone o SpanishPhone) que implementa FormattedPhone
-		FormattedPhone phone = factoryProducer.getPhone(country, phoneNumber);
+		//emprem el metode getFactory del factoryproducer que retorna una fabrica de address o phone segons indiquem a l'argument 
+		IAbstractFactory addressFactory = factoryProducer.getFactory("address");
+		//Instanciem una classe filla de Address(DanishAddres, SpanishAddres o UKAddress segons el valor del String country)
+		Address address = (Address) addressFactory.getAddress(country, street, streetNumber, floor, door, postcode, city);
+		//fem el mateix instanciem una phoneFactory amb el metode getFactory
+		IAbstractFactory phoneFactory = factoryProducer.getFactory("phone");
+		//Instanciem una filla de Phone(DanishPhone, UKPhone o SpanishPhone segons el valor del String country)
+		Phone phone = (Phone) phoneFactory.getPhone(country, phoneNumber);
 		//instanciem un nou objecte Contacte
 		Contact contact = new Contact(address, phone);
-		//agefim a la contactList amb el nom complet com a key i el contacte com a value
+		//afegim a la contactList amb el nom complet com a key i el contacte com a value
 		contactList.put(nameComplete, contact);
 		return contactList;
 	}

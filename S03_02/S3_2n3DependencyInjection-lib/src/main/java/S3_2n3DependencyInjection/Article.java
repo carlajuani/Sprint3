@@ -24,3 +24,5 @@ public class Article {
 		return "[" + name + ", " + price + initialCurrency + "]";
 	}
 }
+
+

@@ -3,12 +3,12 @@ package n1singleton;
 public class App {
 
 	public static void main(String[] args) {
-		//Instanciem l'atribut ArrayList d'Strings a través del mètode estàtic de la classe Undo getInstance
-		Undo.getInstance();
 		
 		boolean exit=false;
 	    do
 	    {
+	      //Instanciem l'atribut ArrayList d'Strings a través del mètode estàtic de la classe Undo getInstance
+	      Undo.setInstance();
 	      System.out.println("\n1.Insert new command");
 	      System.out.println("2.Undo last command");
 	      System.out.println("3.See command's list");

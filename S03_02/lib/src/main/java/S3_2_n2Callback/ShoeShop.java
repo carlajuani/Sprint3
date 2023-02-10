@@ -12,5 +12,9 @@ public class ShoeShop {
 		PaymentGateway payment2 = new PaymentGateway(new CreditCard(35.25));
 		PaymentGateway payment3 = new PaymentGateway(new DirectDebit(35.25));
 	}
+	
+	public static void printSuccesful(double amount) {
+		System.out.println(amount +"€ payment succesful\n");
+	}
 
 }

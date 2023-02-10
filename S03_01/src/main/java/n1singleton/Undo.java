@@ -5,10 +5,8 @@ import java.util.List;
 
 public class Undo {
 	private static List<String> commandsList;
-	
-	private Undo() {};
-	
-	public static void getInstance() {
+	//singleton object
+	public static void setInstance() {
 		if (commandsList == null) {
 			commandsList = new ArrayList<String>();
 		}
