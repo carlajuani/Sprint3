@@ -5,10 +5,6 @@ public class PaymentGateway {
 	
 	public PaymentGateway(IPaymentMethod paymentMethod) throws InterruptedException {
 		this.paymentMethod = paymentMethod;
-		executePayment(paymentMethod.getAmount());
-	}
-
-	public void executePayment(double amount) throws InterruptedException {
-		paymentMethod.executePayment(amount);
+		this.paymentMethod.executePayment(paymentMethod.getAmount());
 	}
 }

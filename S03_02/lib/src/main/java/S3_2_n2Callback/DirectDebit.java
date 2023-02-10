@@ -20,7 +20,7 @@ public class DirectDebit implements IPaymentMethod{
 		Thread.sleep(timeTillNextDisplayChange);
 		System.out.println(".");
 		Thread.sleep(timeTillNextDisplayChange);
-		System.out.println(amount +"€ payment succesful\n");
+		ShoeShop.printSuccesful(amount);
 		Thread.sleep(timeTillNextDisplayChange);
 	}
 	

@@ -6,11 +6,13 @@ package S3_2_n2Callback;
  */
 
 public class ShoeShop {
-	//cal guardar en variable? millor pràctica? SOS
+	
 	public static void main(String[] args) throws InterruptedException {
+		/*instanciem tres pagaments diferents en tres passareles de pagament diferents, que en el seu constructor criden al 
+		metode del paymentMethod que sigui (payPal...) executePayment amb la quantitat introduida per parametre com a atribut*/
 		new PaymentGateway(new PayPal(35.25));
-		PaymentGateway payment2 = new PaymentGateway(new CreditCard(35.25));
-		PaymentGateway payment3 = new PaymentGateway(new DirectDebit(35.25));
+		new PaymentGateway(new CreditCard(35.25));
+		new PaymentGateway(new DirectDebit(35.25));
 	}
 	
 	public static void printSuccesful(double amount) {
