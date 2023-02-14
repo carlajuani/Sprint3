@@ -5,7 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		boolean exit=false;
-	    do
+	    do 
 	    {
 	      //Instanciem l'atribut ArrayList d'Strings a través del mètode estàtic de la classe Undo getInstance
 	      Undo undo = Undo.setInstance();
